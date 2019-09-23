@@ -1,0 +1,22 @@
+<h1>
+  My todo list
+</h1>
+
+<app-todo-form
+  (onAdd)="updateTodos($event)"
+
+>
+
+</app-todo-form>
+<app-todos
+  *ngFor="let t of todos"
+  [todo]="t"
+  (onRemove)="removeTodo($event)"
+>
+</app-todos>
+<hr>
+<p>{{title | uppercase }}</p>
+<p>{{date | date: 'EEEE yyyy'}}</p>
+<p>{{10 | mult}}</p>
+<p>{{10 | mult: 4}}</p>
+<p>{{'Hello       ' | exMarks}}</p>
