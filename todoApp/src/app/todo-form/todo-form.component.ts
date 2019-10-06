@@ -1,5 +1,6 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
-import {ToDo} from "../app.component";
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
+import { ToDo } from '../shared/interfaces';
 
 @Component({
   selector: 'app-todo-form',
@@ -19,7 +20,7 @@ export class TodoFormComponent implements OnInit {
 
   addToDo() {
     if(this.name.trim()) {
-      let id: number = Math.random()*10^8;
+      let id: number = (new Date()).getMilliseconds();
       const todo: ToDo = {
         name: this.name,
         id,
@@ -29,6 +30,5 @@ export class TodoFormComponent implements OnInit {
       this.name = '';
       console.log(id)
     }
-
   };
 }

@@ -1,5 +1,6 @@
-import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
-import {ToDo} from "../app.component";
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+
+import { ToDo } from '../shared/interfaces';
 
 @Component({
   selector: 'app-todos',
@@ -20,5 +21,4 @@ export class TodosComponent implements OnInit {
   removeTodo() {
     this.onRemove.emit(this.todo.id);
   }
-
 }

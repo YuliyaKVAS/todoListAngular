@@ -3,20 +3,13 @@
 </h1>
 
 <app-todo-form
-  (onAdd)="updateTodos($event)"
-
+  (onAdd)="todoService.updateTodos($event)"
 >
 
 </app-todo-form>
 <app-todos
-  *ngFor="let t of todos"
+  *ngFor="let t of todoService.todos"
   [todo]="t"
-  (onRemove)="removeTodo($event)"
+  (onRemove)="todoService.removeTodo($event)"
 >
 </app-todos>
-<hr>
-<p>{{title | uppercase }}</p>
-<p>{{date | date: 'EEEE yyyy'}}</p>
-<p>{{10 | mult}}</p>
-<p>{{10 | mult: 4}}</p>
-<p>{{'Hello       ' | exMarks}}</p>
